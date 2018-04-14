@@ -1,0 +1,11 @@
+#
+# Directories to exclude
+#
+build/*
+
+#
+# Files to exclude
+#
+*.bin
+*.swp
+*.swo
