@@ -9,3 +9,5 @@ build/*
 *.bin
 *.swp
 *.swo
+*.glade~
+*.ui~

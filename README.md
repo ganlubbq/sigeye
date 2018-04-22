@@ -4,7 +4,7 @@ SigEye - Signal Analysis Tool
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-**In heavy development!**
+**In heavy development! Not in a working state.**
 
 Signal analysis tool for inspecting audio and complex sample files, featuring advanced visualizations, demodulators, decoders, bit rasters, and more!
 
@@ -20,3 +20,22 @@ Features
 * Supports FSK, MFSK, QAM, PSK, and OFDM demodulation
 * Various visualizations such as time display, frequency display, waterfall,
   constellations, bit raster, etc.
+
+Dependencies
+------------
+
+ * GTK+
+ * liquid-dsp
+ * FFTW
+
+Install
+-------
+
+Run the following commands:
+
+    $ git clone https://github.com/DaulPavid/sigeye.git
+    $ cd sigeye
+    $ git submodule update --init
+    $ mkdir build && cd build
+    $ cmake ../
+    $ make

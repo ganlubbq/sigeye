@@ -15,15 +15,9 @@
 # along with SigEye.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-#
-# FFTW_FOUND
-# FFTW_INCLUDE_DIR
-# FFTW_LIBRARY
-#
-
-find_path(FFTW_INCLUDE_DIR fftw3.h)
-find_library(FFTW_LIBRARY NAMES fftw3)
-
-include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(fftw3 FFTW_LIBRARY FFTW_INCLUDE_DIR)
-mark_as_advanced(FFTW_INCLUDE_DIR FFTW_LIBRARY)
+################################
+# Add the file IO source files #
+################################
+aggregate_sources(
+    sample_capture.c
+)

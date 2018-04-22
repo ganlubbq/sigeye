@@ -12,18 +12,21 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with SigEye.  If not, see <http://www.gnu.org/licenses/>.
+# along with SigEye. If not, see <http://www.gnu.org/licenses/>.
 #
 
 #
-# FFTW_FOUND
-# FFTW_INCLUDE_DIR
-# FFTW_LIBRARY
+# SQLITE3_FOUND
+# SQLITE3_INCLUDE_DIR
+# SQLITE3_LIBRARY
 #
 
-find_path(FFTW_INCLUDE_DIR fftw3.h)
-find_library(FFTW_LIBRARY NAMES fftw3)
+find_path(SQLITE3_INCLUDE_DIR sqlite3.h)
+find_library(
+    SQLITE3_LIBRARY NAMES sqlite3 libsqlite3
+    HINTS /usr/lib /usr/local/lib
+)
 
 include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(fftw3 FFTW_LIBRARY FFTW_INCLUDE_DIR)
-mark_as_advanced(FFTW_INCLUDE_DIR FFTW_LIBRARY)
+find_package_handle_standard_args(sqlite3 SQLITE3_LIBRARY SQLITE3_INCLUDE_DIR)
+mark_as_advanced(SQLITE3_INCLUDE_DIR SQLITE3_LIBRARY)

@@ -16,14 +16,19 @@
 #
 
 #
-# FFTW_FOUND
-# FFTW_INCLUDE_DIR
-# FFTW_LIBRARY
+# JSONGLIB_FOUND
+# JSONGLIB_INCLUDE_DIR
+# JSONGLIB_LIBRARY
 #
 
-find_path(FFTW_INCLUDE_DIR fftw3.h)
-find_library(FFTW_LIBRARY NAMES fftw3)
+find_path(JSONGLIB_INCLUDE_DIR
+    NAMES json-glib/json-glib.h
+    PATH_SUFFIXES json-glib-1.0
+)
+find_library(JSONGLIB_LIBRARY
+    NAMES json-glib json-glib-1.0
+)
 
 include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(fftw3 FFTW_LIBRARY FFTW_INCLUDE_DIR)
-mark_as_advanced(FFTW_INCLUDE_DIR FFTW_LIBRARY)
+find_package_handle_standard_args(json-glib JSONGLIB_LIBRARY JSONGLIB_INCLUDE_DIR)
+mark_as_advanced(JSONGLIB_INCLUDE_DIR JSONGLIB_LIBRARY)

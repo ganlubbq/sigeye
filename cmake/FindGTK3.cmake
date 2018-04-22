@@ -25,7 +25,8 @@ find_package(PkgConfig REQUIRED)
 PKG_CHECK_MODULES(PC_GTK3 gtk+-3.0)
 
 set(GTK3_INCLUDE_DIR ${PC_GTK3_INCLUDE_DIRS})
-set(GTK3_LIBRARIES ${PC_GTK3_LIBRARIES})
+set(GTK3_LIBRARY ${PC_GTK3_LIBRARIES})
 
+include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(gtk3 GTK3_LIBRARY GTK3_INCLUDE_DIR)
 mark_as_advanced(GTK3_INCLUDE_DIR GTK3_LIBRARY)
