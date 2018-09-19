@@ -105,8 +105,8 @@ shader_program_bind_frag(ShaderProgram *s,
 }
 
 GLuint
-shader_program_get_frag(ShaderProgram *s, 
-                        const gchar *name)
+shader_program_frag(ShaderProgram *s, 
+                    const gchar *name)
 {
     return glGetFragDataLocation(s->program_id, name);
 }

@@ -40,7 +40,7 @@ void           shader_program_bind_frag (ShaderProgram *s,
                                          GLuint         color_num,
                                          const gchar   *name);
 
-GLuint         shader_program_get_frag  (ShaderProgram *s,
+GLuint         shader_program_frag      (ShaderProgram *s,
                                          const gchar *name);
 
 void           shader_program_link      (ShaderProgram *s);
