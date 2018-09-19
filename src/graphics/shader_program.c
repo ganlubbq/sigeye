@@ -21,6 +21,8 @@
 
 #include <stdio.h>
 
+#define GL_LOG_SIZE 1024
+
 struct _ShaderProgram
 {
     GSList* shader_list;

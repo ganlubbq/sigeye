@@ -23,8 +23,6 @@
 
 #include <GL/gl3w.h>
 
-#define GL_LOG_SIZE 1024
-
 G_BEGIN_DECLS
 
 #define SHADER_TYPE (shader_get_type ())
