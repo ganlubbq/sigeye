@@ -28,9 +28,8 @@ set(CMAKE_BUILD_TYPE Debug)
 # Project libraries #
 #####################
 find_package(Threads  REQUIRED)
-find_package(FFTW     REQUIRED)
+find_package(LuaJIT   REQUIRED)
 find_package(Liquid   REQUIRED)
-find_package(SQLite3  REQUIRED)
 find_package(OpenGL   REQUIRED)
 find_package(GTK3     REQUIRED)
 
@@ -38,8 +37,7 @@ find_package(GTK3     REQUIRED)
 # Include source directories #
 ##############################
 list(APPEND PROJECT_INCLUDES src)
-list(APPEND PROJECT_INCLUDES ${FFTW_INCLUDE_DIR})
-list(APPEND PROJECT_INCLUDES ${SQLITE3_INCLUDE_DIR})
+list(APPEND PROJECT_INCLUDES ${LUAJIT_INCLUDE_DIR})
 list(APPEND PROJECT_INCLUDES ${GTK3_INCLUDE_DIR})
 
 include_directories(${PROJECT_INCLUDES})
