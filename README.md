@@ -18,13 +18,13 @@ Features
 * File I/O that supports file captures from various sources (audio, IQ data, and other formats)
 * Node editor for custom signal processing
 * Supports FSK, MFSK, QAM, PSK, and OFDM demodulation
-* Various visualizations such as time display, frequency display, waterfall,
-  constellations, bit raster, etc.
+* Various visualizations such as time display, frequency display, waterfall, constellations, bit raster, etc.
 
 Dependencies
 ------------
 
  * GTK+
+ * OpenGL
  * liquid-dsp
  * FFTW
 
@@ -35,7 +35,6 @@ Run the following commands:
 
     $ git clone https://github.com/DaulPavid/sigeye.git
     $ cd sigeye
-    $ git submodule update --init
     $ mkdir build && cd build
     $ cmake ../
     $ make
