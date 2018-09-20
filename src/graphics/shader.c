@@ -85,7 +85,13 @@ shader_monitor_file(Shader *s)
 }
 
 Shader*
-shader_new(const gchar *path, GLenum shader_type)
+shader_new()
+{
+    return g_object_new(SHADER_TYPE, NULL);
+}
+
+Shader*
+shader_new_from(const gchar *path, GLenum shader_type)
 {
     Shader *s = g_object_new(SHADER_TYPE, NULL);
     if (shader_find_file(s, path))

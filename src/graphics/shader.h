@@ -29,7 +29,9 @@ G_BEGIN_DECLS
 
 G_DECLARE_FINAL_TYPE (Shader, shader, SHADER, OBJECT, GObject)
 
-Shader*  shader_new                 (const gchar *path, GLenum shader_type);
+Shader*  shader_new                 ();
+Shader*  shader_new_from            (const gchar *path, GLenum shader_type);
+
 void     shader_compile_source      (Shader      *s,
                                      GLenum       shader_type,
                                      const gchar *shader_contents,
