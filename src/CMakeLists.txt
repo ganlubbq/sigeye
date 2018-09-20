@@ -44,7 +44,7 @@ list(APPEND EXECUTABLE_SOURCES
 )
 
 ##################################
-# Add sub directory source files #
+# Add sub-directory source files #
 ##################################
 add_subdirectory(graphics)
 add_subdirectory(dsp)

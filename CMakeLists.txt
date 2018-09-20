@@ -20,6 +20,7 @@
 #########################
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 project(sigeye C)
+enable_testing()
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 set(CMAKE_BUILD_TYPE Debug)
@@ -46,3 +47,4 @@ include_directories(${PROJECT_INCLUDES})
 # Project sub-directories #
 ###########################
 add_subdirectory(src)
+add_subdirectory(tests)
