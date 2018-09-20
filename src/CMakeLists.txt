@@ -35,8 +35,12 @@ endmacro(aggregate_sources)
 # Add the main source files #
 #############################
 list(APPEND MAIN_SOURCES
-    sigeye.c
     sigeye_noodle.c
+    sigeye_spectrum.c
+)
+
+list(APPEND EXECUTABLE_SOURCES
+    sigeye.c
 )
 
 ##################################
@@ -65,8 +69,14 @@ list(APPEND MAIN_LIBRARIES
     ${GTK3_LIBRARY}
 )
 
-#########################
-# Build the main binary #
-#########################
-add_executable(sigeye ${MAIN_SOURCES} ${GL3W_SOURCES})
-target_link_libraries(sigeye ${MAIN_LIBRARIES})
+##########################
+# Build the main library #
+##########################
+add_library(sigeye_library ${MAIN_SOURCES} ${GL3W_SOURCES})
+target_link_libraries(sigeye_library ${MAIN_LIBRARIES})
+
+###########################
+# Build the main binaries #
+###########################
+add_executable(sigeye ${EXECUTABLE_SOURCES})
+target_link_libraries(sigeye sigeye_library)
