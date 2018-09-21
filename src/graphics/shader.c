@@ -93,7 +93,7 @@ shader_new()
 Shader*
 shader_new_from(const gchar *path, GLenum shader_type)
 {
-    Shader *s = g_object_new(SHADER_TYPE, NULL);
+    Shader *s = shader_new();
     if (shader_find_file(s, path))
     {
         g_autofree gchar *shader_contents = NULL;
