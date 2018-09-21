@@ -36,9 +36,9 @@ Spectrogram* spectrogram_new    (guint64 nfft,
                                  guint64 delay,
                                  guint64 samples_per_estimate);
 
-void         spectrogram_write  (Spectrogram         *s,
-                                 const float complex *x,
-                                 guint64              n);
+void         spectrogram_write  (Spectrogram                *s,
+                                 const liquid_float_complex *x,
+                                 guint64                     n);
 
 void         spectrogram_clear  (Spectrogram *s);       
 void         spectrogram_delete (Spectrogram *s);

@@ -65,9 +65,9 @@ spectrogram_new(guint64 nfft,
 }
 
 void
-spectrogram_write(Spectrogram         *s,
-                  const float complex *x,
-                  guint64              n)
+spectrogram_write(Spectrogram                *s,
+                  const liquid_float_complex *x,
+                  guint64                     n)
 {
     spgramcf_write(s->spgram, (float complex *) x, n);
     if (spgramcf_get_num_samples(s->spgram) > s->samples_per_estimate)
