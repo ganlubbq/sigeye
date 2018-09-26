@@ -23,7 +23,11 @@
 
 find_path(
     LUAJIT_INCLUDE_DIR luajit.h
-    PATH_SUFFIXES include include/luajit include/luajit-2.1
+    PATH_SUFFIXES
+    include
+    include/luajit
+    include/luajit-2.0
+    include/luajit-2.1
 )
 find_library(
     LUAJIT_LIBRARY NAMES luajit luajit-5.1 libluajit libluajit-5.1
