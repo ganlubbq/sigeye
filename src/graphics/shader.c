@@ -146,7 +146,7 @@ gboolean
 shader_find_file(Shader *s, const gchar *path)
 {
     s->file = g_file_new_for_path(path);
-    if (g_file_query_exists(s->file, NULL))
+    if (!g_file_query_exists(s->file, NULL))
     {
         fprintf(stderr, "[FAIL] - Shader file does not exist: %s\n", path);
         return FALSE;
