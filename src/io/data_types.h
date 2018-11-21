@@ -19,8 +19,7 @@
 #ifndef __DATA_TYPES_H__
 #define __DATA_TYPES_H__
 
-#include <glib-object.h>
-
+// TODO: Get rid of this file
 #define DEFINE_COMPLEX_TYPE(TYPE, NAME)  \
     typedef struct                       \
     {                                    \
@@ -28,6 +27,14 @@
         TYPE imag;                       \
     }                                    \
     NAME;
+
+DEFINE_COMPLEX_TYPE (gfloat, complex_float_32);
+DEFINE_COMPLEX_TYPE (gint32, complex_int_32);
+DEFINE_COMPLEX_TYPE (gint16, complex_int_16);
+DEFINE_COMPLEX_TYPE (gint8, complex_int_8);
+DEFINE_COMPLEX_TYPE (guint32, complex_uint_32);
+DEFINE_COMPLEX_TYPE (guint16, complex_uint_16);
+DEFINE_COMPLEX_TYPE (guint8, complex_uint_8);
 
 typedef enum
 {
@@ -44,16 +51,26 @@ typedef enum
     REAL_INT_8,
     REAL_UINT_32,
     REAL_UINT_16,
-    REAL_UINT_8
+    REAL_UINT_8,
+    WAV_PCM
 }
 SampleCaptureType;
 
-DEFINE_COMPLEX_TYPE (gfloat, complex_float_32);
-DEFINE_COMPLEX_TYPE (gint32, complex_int_32);
-DEFINE_COMPLEX_TYPE (gint16, complex_int_16);
-DEFINE_COMPLEX_TYPE (gint8, complex_int_8);
-DEFINE_COMPLEX_TYPE (guint32, complex_uint_32);
-DEFINE_COMPLEX_TYPE (guint16, complex_uint_16);
-DEFINE_COMPLEX_TYPE (guint8, complex_uint_8);
+typedef struct
+{
+    guint64 components;
+    guint64 size;
+
+    gboolean (*header_parser)(void *user_data);
+
+    void (*data_converter)(void    *user_data,
+                           guint64  num_samples);
+}
+SampleCaptureTypeInfo;
+
+static SampleCaptureTypeInfo sample_capture_type_info[] =
+{
+    {2, 32, NULL, NULL},
+};
 
 #endif

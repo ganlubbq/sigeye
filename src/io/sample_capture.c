@@ -45,7 +45,7 @@ G_DEFINE_TYPE (SampleCapture, sample_capture, G_TYPE_OBJECT)
 static void
 sample_capture_changed_emit(SampleCapture *s)
 {
-    g_signal_emit_by_name(s, "sample-capture-changed", NULL);
+    g_signal_emit_by_name(s, "capture-changed", NULL);
 }
 
 static void
@@ -59,7 +59,7 @@ sample_capture_changed_cb(GFileMonitor     *file_monitor,
 
     sample_capture_changed_emit(s);
 
-    sample_capture_detect_type(s, COMPLEX_FLOAT_32);
+    sample_capture_data_type(s, COMPLEX_FLOAT_32);
     sample_capture_read_file(s);
 }
 
@@ -85,10 +85,9 @@ sample_capture_new()
 }
 
 void
-sample_capture_detect_type(SampleCapture *s,
-                           SampleCaptureType default_type)
+sample_capture_data_type(SampleCapture *s,
+                         SampleCaptureType default_type)
 {
-
 }
 
 SampleCapture*
@@ -98,7 +97,7 @@ sample_capture_new_from(const gchar       *path,
     SampleCapture *s = sample_capture_new();
     if (sample_capture_find_file(s, path))
     {
-        sample_capture_detect_type(s, sample_type);
+        sample_capture_data_type(s, sample_type);
         sample_capture_read_file(s);
         sample_capture_monitor_file(s);
     }
@@ -191,7 +190,7 @@ sample_capture_finalize(GObject *obj)
 static void
 sample_capture_class_init(SampleCaptureClass *class)
 {
-    g_signal_new("file-changed",
+    g_signal_new("capture-changed",
                  G_TYPE_FROM_CLASS(class),
                  G_SIGNAL_RUN_LAST | G_SIGNAL_NO_RECURSE,
                  0, NULL, NULL, NULL,

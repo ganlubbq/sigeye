@@ -33,7 +33,7 @@ SampleCapture*    sample_capture_new           ();
 SampleCapture*    sample_capture_new_from      (const gchar       *path,
                                                 SampleCaptureType  sample_type);
 
-void              sample_capture_detect_type   (SampleCapture *s,
+void              sample_capture_data_type     (SampleCapture *s,
                                                 SampleCaptureType default_type);
 
 gboolean          sample_capture_find_file     (SampleCapture *s, const gchar *path);

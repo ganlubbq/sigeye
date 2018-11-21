@@ -20,4 +20,5 @@
 ################################
 aggregate_sources(
     sample_capture.c
+    base_file.c
 )
